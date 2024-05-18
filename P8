@@ -1,0 +1,78 @@
+import java.io.*;
+
+public class LecturaNumeros extends BufferedReader {
+
+    public LecturaNumeros() {
+        super(new InputStreamReader(System.in));
+    }
+
+    public LecturaNumeros(Reader r) {
+        super(r);
+    }
+
+    public int readInt() throws IOException {
+        return Integer.parseInt(readLine());
+    }
+
+    public int readInt(String mensaje) throws IOException {
+        System.out.println(mensaje);
+        return readInt();
+    }
+
+    public Integer readInteger() throws IOException {
+        return Integer.valueOf(readInt());
+    }
+
+    public double readDouble() throws IOException {
+        return Double.parseDouble(readLine());
+    }
+
+    public double readDouble(String mensaje) throws IOException {
+        System.out.println(mensaje);
+        return readDouble();
+    }
+
+    public static void main(String[] args) {
+        try {
+            LecturaNumeros ln = new LecturaNumeros();
+            
+            int int1 = ln.readInt("Ingrese el primer número entero:");
+            int int2 = ln.readInt("Ingrese el segundo número entero:");
+            Integer integer = ln.readInteger("Ingrese un número entero (Integer):");
+            double double1 = ln.readDouble("Ingrese un número double:");
+            double double2 = ln.readDouble("Ingrese otro número double:");
+            
+            System.out.println("Primer número entero: " + int1);
+            System.out.println("Segundo número entero: " + int2);
+            System.out.println("Número entero (Integer): " + integer);
+            System.out.println("Número double: " + double1);
+            System.out.println("Otro número double: " + double2);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+public class TestLecturaNumeros {
+    public static void main(String[] args) {
+        LecturaNumeros ln = new LecturaNumeros();
+
+        try {
+            int int1 = ln.readInt("Ingrese el primer número entero:");
+            int int2 = ln.readInt("Ingrese el segundo número entero:");
+            Integer integer = ln.readInteger("Ingrese un número entero (Integer):");
+            double double1 = ln.readDouble("Ingrese un número double:");
+            double double2 = ln.readDouble("Ingrese otro número double:");
+
+            System.out.println("Primer número entero: " + int1);
+            System.out.println("Segundo número entero: " + int2);
+            System.out.println("Número entero (Integer): " + integer);
+            System.out.println("Número double: " + double1);
+            System.out.println("Otro número double: " + double2);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
